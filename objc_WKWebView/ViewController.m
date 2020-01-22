@@ -9,7 +9,7 @@
 @interface WKViewController () <WKUIDelegate, WKNavigationDelegate>
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UIView *baseView;
-    @property (nonatomic) WKWebView *webView;
+@property (nonatomic) WKWebView *webView;
 @end
 
 static NSString *const RequestURL = @"https://www.apple.com/";
@@ -19,7 +19,12 @@ static NSString *const RequestURL = @"https://www.apple.com/";
 #pragma mark - LifeCycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"🍭viewDidLoad");
     [self setup];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:true];
+     NSLog(@"🍭viewDidAppear");
 }
 
 - (IBAction)refresh:(id)sender {
@@ -46,6 +51,7 @@ static NSString *const RequestURL = @"https://www.apple.com/";
     self.webView.allowsBackForwardNavigationGestures = YES;
     self.webView.customUserAgent = @"YDWKDemoUserAgent";
     [self.baseView addSubview: self.webView];
+    [self setupViewConstraints: self.webView];
 }
 
 - (void)setURL:(NSString *)requestURLString {
@@ -91,6 +97,50 @@ static NSString *const RequestURL = @"https://www.apple.com/";
         return nil;
     }
     return nil;
+}
+
+- (void)setupViewConstraints: (WKWebView *)webView {
+    webView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint *top =
+    [NSLayoutConstraint constraintWithItem: webView
+                                 attribute: NSLayoutAttributeTop
+                                 relatedBy: NSLayoutRelationEqual
+                                    toItem: self.baseView
+                                 attribute: NSLayoutAttributeTop
+                                multiplier: 1.0
+                                  constant: 0];
+    
+    NSLayoutConstraint *bottom =
+    [NSLayoutConstraint constraintWithItem: webView
+                                 attribute: NSLayoutAttributeBottom
+                                 relatedBy: NSLayoutRelationEqual
+                                    toItem: self.baseView
+                                 attribute: NSLayoutAttributeBottom
+                                multiplier: 1.0
+                                  constant: 0];
+    
+    NSLayoutConstraint *left =
+    [NSLayoutConstraint constraintWithItem: webView
+                                 attribute: NSLayoutAttributeLeft
+                                 relatedBy: NSLayoutRelationEqual
+                                    toItem: self.baseView
+                                 attribute: NSLayoutAttributeLeft
+                                multiplier: 1.0
+                                  constant: 0];
+    
+    NSLayoutConstraint *right =
+    [NSLayoutConstraint constraintWithItem: webView
+                                 attribute: NSLayoutAttributeRight
+                                 relatedBy: NSLayoutRelationEqual
+                                    toItem: self.baseView
+                                 attribute: NSLayoutAttributeRight
+                                multiplier: 1.0
+                                  constant: 0];
+    
+    NSArray *constraints = @[top,bottom,left,right];
+    
+    [self.baseView addConstraints:constraints];
 }
 
 @end
