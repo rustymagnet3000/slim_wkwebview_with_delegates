@@ -14,6 +14,7 @@
 		0F81734423D5F4F800D97D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F81734323D5F4F800D97D05 /* Assets.xcassets */; };
 		0F81734723D5F4F800D97D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F81734523D5F4F800D97D05 /* LaunchScreen.storyboard */; };
 		0F81734A23D5F4F800D97D05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F81734923D5F4F800D97D05 /* main.m */; };
+		0FCC4B3A23D8461D0002AD84 /* YDNavDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCC4B3923D8461D0002AD84 /* YDNavDel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		0F81734623D5F4F800D97D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F81734823D5F4F800D97D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F81734923D5F4F800D97D05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0FCC4B3823D8461D0002AD84 /* YDNavDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDNavDel.h; sourceTree = "<group>"; };
+		0FCC4B3923D8461D0002AD84 /* YDNavDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDNavDel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				0F81733B23D5F4F700D97D05 /* SceneDelegate.m */,
 				0F81733D23D5F4F700D97D05 /* ViewController.h */,
 				0F81733E23D5F4F700D97D05 /* ViewController.m */,
+				0FCC4B3823D8461D0002AD84 /* YDNavDel.h */,
+				0FCC4B3923D8461D0002AD84 /* YDNavDel.m */,
 				0F81734023D5F4F700D97D05 /* Main.storyboard */,
 				0F81734323D5F4F800D97D05 /* Assets.xcassets */,
 				0F81734523D5F4F800D97D05 /* LaunchScreen.storyboard */,
@@ -149,6 +154,7 @@
 				0F81733F23D5F4F700D97D05 /* ViewController.m in Sources */,
 				0F81733923D5F4F700D97D05 /* AppDelegate.m in Sources */,
 				0F81734A23D5F4F800D97D05 /* main.m in Sources */,
+				0FCC4B3A23D8461D0002AD84 /* YDNavDel.m in Sources */,
 				0F81733C23D5F4F700D97D05 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
