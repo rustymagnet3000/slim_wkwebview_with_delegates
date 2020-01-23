@@ -1,15 +1,12 @@
 #import "ViewController.h"
+#import "YDNavDel.h"
 
-#ifdef DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-#else
-#define NSLog(...) {}
-#endif
 
-@interface WKViewController () <WKUIDelegate>
-@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
-@property (weak, nonatomic) IBOutlet UIView *baseView;
+@interface WKViewController ()
+
 @property (nonatomic) WKWebView *webView;
+@property (nonatomic) YDNavDel *customDel;
+
 @end
 
 static NSString *const RequestURL = @"https://www.apple.com/";
@@ -18,10 +15,9 @@ static NSString *const RequestURL = @"https://www.apple.com/";
 
 #pragma mark - LifeCycle Methods
 - (void)viewDidLoad {
-    NSLog(@"🍭viewDidLoad");
+
     [super viewDidLoad];
     [self setURL: RequestURL];
-    NSLog(@"🍭viewDidLoad finished");
 }
 
 - (IBAction)refresh:(id)sender {
@@ -30,18 +26,28 @@ static NSString *const RequestURL = @"https://www.apple.com/";
 }
 
 -(void)loadView{
-    NSLog(@"🍭loadView");
+
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     WKWebsiteDataStore *dataStore = [WKWebsiteDataStore defaultDataStore];
     config.websiteDataStore = dataStore;
     
     self.webView = [[WKWebView alloc] initWithFrame: CGRectZero
                                       configuration: config];
-    self.webView.UIDelegate = self;
-    self.view = self.webView;
-    // self.webView.navigationDelegate = self;
+
     self.webView.allowsBackForwardNavigationGestures = YES;
-    self.webView.customUserAgent = @"YDWKDemoUserAgent";
+
+    self.customDel = [[YDNavDel alloc] init];
+    self.webView.navigationDelegate = self.customDel;
+
+    if([self.webView.navigationDelegate respondsToSelector:@selector(webView:didFinishNavigation:)]) {
+        NSLog(@"🍭navigationDelegate setup");
+    }
+    
+    self.view = self.webView;
+
+
+    UIBarButtonItem *refreshBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
+    self.navigationItem.rightBarButtonItem = refreshBtn;
 }
 
 #pragma mark - Private Methods
@@ -53,7 +59,6 @@ static NSString *const RequestURL = @"https://www.apple.com/";
                                               timeoutInterval: 5];
     [self.webView loadRequest: request];
 }
-
 
 
 @end

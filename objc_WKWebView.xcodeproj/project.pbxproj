@@ -32,6 +32,7 @@
 		0F81734923D5F4F800D97D05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0FCC4B3823D8461D0002AD84 /* YDNavDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDNavDel.h; sourceTree = "<group>"; };
 		0FCC4B3923D8461D0002AD84 /* YDNavDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDNavDel.m; sourceTree = "<group>"; };
+		0FCC4B3B23D8B55D0002AD84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 		0F81732B23D5F4F700D97D05 = {
 			isa = PBXGroup;
 			children = (
+				0FCC4B3B23D8B55D0002AD84 /* README.md */,
 				0F81733623D5F4F700D97D05 /* objc_WKWebView */,
 				0F81733523D5F4F700D97D05 /* Products */,
 			);
