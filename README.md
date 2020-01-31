@@ -1,10 +1,11 @@
 # Slimmed down WKWebView
-### Goals
-With `Objective-C`, avoid a  `Massive View Controller` by.
+### Background
+I used the project as playground to understand `Delegate Methods` and `Javascript` inside a slim setup.  I avoided a  `Massive View Controller` by:
+
 - connecting a  `WKNavigationDelegate` as a property.
 - connecting a  `WKUIDelegate` as a property.
 
-Use the project as a simple playground to show all large amount of  `Delegate Methods` and `Javascript` inside a slim WKWebView setup.
+ I loaded a `local.html` file and inherited from `WKScriptMessageHandler` to see more Javascript code in action.
 
 ### Slim
 - No `auto-layout` constraints.

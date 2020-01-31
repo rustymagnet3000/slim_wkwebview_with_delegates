@@ -2,7 +2,7 @@
 #import "YDNavDel.h"
 #import "YDUIDel.h"
 
-@interface WKViewController ()
+@interface WKViewController () <WKScriptMessageHandler>
 
 @property (nonatomic) WKWebView *webView;
 @property (nonatomic) YDNavDel *customNavDel;
@@ -25,9 +25,31 @@ NSString static *RequestURL = @"https://www.apple.com/";
     [self.webView reload];
 }
 
+- (IBAction)localFile:(id)sender {
+    NSLog(@"🍭load local file");
+    NSURL *bundleURL = [[[NSBundle mainBundle]resourceURL] absoluteURL];
+    NSURL *fileURL = [bundleURL URLByAppendingPathComponent:@"local.html"];
+    [self.webView loadFileURL:fileURL allowingReadAccessToURL:bundleURL];
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+
+    if([[message name]  isEqual: @"jsHandler"]) {
+        NSLog(@"🍭Inside userContentController and jsHandler");
+        NSLog(@"%@", [message body]);
+    }
+}
+
 -(void)loadView{
 
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+
+    WKUserContentController *userController = [[WKUserContentController alloc] init];
+    [userController addScriptMessageHandler:self name:@"jsHandler"];
+    config.userContentController = userController;
+    
+    
+    
     WKPreferences *prefs = [[WKPreferences alloc] init];
     WKWebsiteDataStore *dataStore = [WKWebsiteDataStore defaultDataStore];
     config.websiteDataStore = dataStore;
@@ -52,7 +74,10 @@ NSString static *RequestURL = @"https://www.apple.com/";
 
 
     UIBarButtonItem *refreshBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
+    
+    UIBarButtonItem *fileBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(localFile:)];
     self.navigationItem.rightBarButtonItem = refreshBtn;
+    self.navigationItem.leftBarButtonItem = fileBtn;
 }
 
 #pragma mark - Private Methods

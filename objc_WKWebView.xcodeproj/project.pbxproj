@@ -15,6 +15,7 @@
 		0F81734A23D5F4F800D97D05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F81734923D5F4F800D97D05 /* main.m */; };
 		0FCC4B3A23D8461D0002AD84 /* YDNavDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCC4B3923D8461D0002AD84 /* YDNavDel.m */; };
 		0FF6290B23E44E7C009D864B /* YDUIDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6290A23E44E7C009D864B /* YDUIDel.m */; };
+		0FF6290D23E477A8009D864B /* local.html in Resources */ = {isa = PBXBuildFile; fileRef = 0FF6290C23E477A8009D864B /* local.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		0FCC4B3B23D8B55D0002AD84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		0FF6290923E44E7C009D864B /* YDUIDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDUIDel.h; sourceTree = "<group>"; };
 		0FF6290A23E44E7C009D864B /* YDUIDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDUIDel.m; sourceTree = "<group>"; };
+		0FF6290C23E477A8009D864B /* local.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = local.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				0FCC4B3923D8461D0002AD84 /* YDNavDel.m */,
 				0FF6290923E44E7C009D864B /* YDUIDel.h */,
 				0FF6290A23E44E7C009D864B /* YDUIDel.m */,
+				0FF6290C23E477A8009D864B /* local.html */,
 				0F81734023D5F4F700D97D05 /* Main.storyboard */,
 				0F81734323D5F4F800D97D05 /* Assets.xcassets */,
 				0F81734523D5F4F800D97D05 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF6290D23E477A8009D864B /* local.html in Resources */,
 				0F81734723D5F4F800D97D05 /* LaunchScreen.storyboard in Resources */,
 				0F81734423D5F4F800D97D05 /* Assets.xcassets in Resources */,
 				0F81734223D5F4F700D97D05 /* Main.storyboard in Resources */,

@@ -14,11 +14,14 @@
     UIViewController *presentedVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     [presentedVC presentViewController:ac animated:TRUE completion:NULL];
     
+    NSString *jscode = @"console.log('Hello World')";
+    [webView evaluateJavaScript:jscode completionHandler:NULL];
+
     completionHandler();
 }
 
 -(void) customHandler {
-    NSLog(@"🐝in custom Handler");
+    NSLog(@"🐝in custom Handler. Invoked from UIAlertAction");
 }
 
 - (void)webViewDidClose:(WKWebView *)webView{

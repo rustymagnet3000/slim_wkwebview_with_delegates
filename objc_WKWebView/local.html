@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script>
+        function hideText() {
+            console.log('YDMessage: hideText() called and hiding text')
+            document.getElementById("demo").style.display = "none";
+        }
+    
+        function showText() {
+            console.log('YDMessage: showText() called and printing to Console')
+            document.getElementById("demo").style.display = "block";
+            window.webkit.messageHandlers.jsHandler.postMessage("trigger written in HTML file");
+        }
+    </script>
+</head>
+<body>
+    <p id="demo">Hello World.</p>
+    <input type="button" onclick="showText()" value="Show Text and Trigger Handler">
+    <input type="button" onclick="hideText()" value="Hide Text">
+</body>
+</html>
