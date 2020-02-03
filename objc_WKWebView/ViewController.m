@@ -47,13 +47,12 @@ NSString static *RequestURL = @"https://www.apple.com/";
     WKUserContentController *userController = [[WKUserContentController alloc] init];
     [userController addScriptMessageHandler:self name:@"jsHandler"];
     config.userContentController = userController;
-    
-    
-    
+
     WKPreferences *prefs = [[WKPreferences alloc] init];
     WKWebsiteDataStore *dataStore = [WKWebsiteDataStore defaultDataStore];
     config.websiteDataStore = dataStore;
     config.preferences = prefs;
+
     
     self.webView = [[WKWebView alloc] initWithFrame: CGRectZero
                                       configuration: config];
