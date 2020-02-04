@@ -39,7 +39,4 @@ add_header X-Content-Type-Options nosniff;
 add_header X-Frame-Options SAMEORIGIN;
 add_header X-XSS-Protection "1; mode=block";
 ```
-No of these headers helped. My local web server always worked when you switched to a `local.html` file.
-
-
-
+Turned out it was not an error. It was a layout issue.  That might not sound useful but it shows - by default -  `Secure HTTP Headers` were less relevant in a `WKWebView` context.

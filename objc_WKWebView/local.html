@@ -15,13 +15,20 @@
         function showText() {
             console.log('YDMessage: showText() called and printing to Console')
             document.getElementById("demo").style.display = "block";
-            window.webkit.messageHandlers.jsHandler.postMessage("trigger written in HTML file");
         }
+        function triggerHandler() {
+            window.webkit.messageHandlers.jsHandler.postMessage("secretViewController","written in html file");
+    }
     </script>
 </head>
 <body>
-    <p id="demo">Hello World.</p>
-    <input type="button" onclick="showText()" value="Show Text and Trigger Handler">
+    <p></p>
+    <h1> Devil. </h>
+    <h2> Detail. </h2>
+    <h3> Show/hide secret message</h3>
+    <p id="demo">Alice loves Bob.</p>
+    <input type="button" onclick="showText()" value="Show Text">
     <input type="button" onclick="hideText()" value="Hide Text">
+    <input type="button" onclick="triggerHandler()" value="Trigger Handler">
 </body>
 </html>

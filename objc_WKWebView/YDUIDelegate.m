@@ -1,4 +1,4 @@
-#import "YDUIDel.h"
+#import "YDUIDelegate.h"
 
 @implementation YDUIDel
 
@@ -24,9 +24,5 @@
     NSLog(@"🐝in custom Handler. Invoked from UIAlertAction");
 }
 
-- (void)webViewDidClose:(WKWebView *)webView{
-    NSLog(@"🐝webViewDidClose");
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-}
 
 @end

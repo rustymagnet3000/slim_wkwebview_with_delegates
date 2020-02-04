@@ -1,4 +1,4 @@
-#import "YDNavDel.h"
+#import "YDNavDelegate.h"
 
 @implementation YDNavDel
 
@@ -22,7 +22,6 @@
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
-
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
     
     NSLog(@"🍭challenge from: %@", [[challenge protectionSpace] host]);
@@ -30,8 +29,11 @@
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    
-    NSLog(@"🍭didFinishNavigation");
+    if ([webView hasOnlySecureContent]) {
+        NSLog(@"🍭didFinishNavigation:\tOnlySecureContent loaded!");
+    } else {
+        NSLog(@"🍭didFinishNavigation:\tMixed content mode.");
+    }
 }
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
