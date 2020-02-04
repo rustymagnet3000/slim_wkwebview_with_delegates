@@ -1,9 +1,10 @@
 #import "YDUIDelegate.h"
 
+
 @implementation YDUIDel
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
-        NSLog(@"🐝%@", NSStringFromSelector(_cmd));
+        [YDPrettyPrint single:NSStringFromSelector(_cmd)];
     
     UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"FooBar title" message:message preferredStyle:UIAlertControllerStyleAlert];
     
@@ -21,7 +22,7 @@
 }
 
 -(void) customHandler {
-    NSLog(@"🐝in custom Handler. Invoked from UIAlertAction");
+    [YDPrettyPrint single:@"🐝in custom Handler. Invoked from UIAlertAction"];
 }
 
 

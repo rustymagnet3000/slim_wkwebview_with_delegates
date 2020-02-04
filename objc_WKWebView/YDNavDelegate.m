@@ -3,11 +3,11 @@
 @implementation YDNavDel
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    NSLog(@"🍭didStartProvisionalNavigation");
+    [YDPrettyPrint single:NSStringFromSelector(_cmd)];
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-    NSLog(@"🍭decidePolicyForNavigationAction URL：%@", navigationAction.request.URL.absoluteString);
+    [YDPrettyPrint single:navigationAction.request.URL.absoluteString];
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
@@ -16,32 +16,31 @@
     NSHTTPURLResponse *response = (NSHTTPURLResponse *)navigationResponse.response;
     
     if ([response respondsToSelector:@selector(statusCode)]){ // required for local content
-        NSLog(@"🍭HTTP Status: %ld", (long)response.statusCode);
+        [YDPrettyPrint multiple:@"HTTP Status: %ld", (long)response.statusCode];
     }
     
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
-    
-    NSLog(@"🍭challenge from: %@", [[challenge protectionSpace] host]);
+    [YDPrettyPrint multiple:@"challenge from: %@", [[challenge protectionSpace] host] ];
     completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, NULL);
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     if ([webView hasOnlySecureContent]) {
-        NSLog(@"🍭didFinishNavigation:\tOnlySecureContent loaded!");
+        [YDPrettyPrint single:@"OnlySecureContent loaded!"];
     } else {
-        NSLog(@"🍭didFinishNavigation:\tMixed content mode.");
+        [YDPrettyPrint single:@"Mixed content mode"];
     }
 }
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-    NSLog(@"🍭didFailProvisionalNavigation");
+    [YDPrettyPrint single:NSStringFromSelector(_cmd)];
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-    NSLog(@"🍭didFailNavigation");
+    [YDPrettyPrint single:NSStringFromSelector(_cmd)];
 }
 
 @end

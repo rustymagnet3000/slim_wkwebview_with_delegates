@@ -17,18 +17,15 @@ NSString static *RequestURL = @"https://www.apple.com/";
 
 #pragma mark - LifeCycle Methods
 - (void)viewDidLoad {
-    NSLog(@"🍭viewDidLoad");
     [super viewDidLoad];
     [self setURL: RequestURL];
 }
 
 - (IBAction)refresh:(id)sender {
-    NSLog(@"🍭refresh");
     [self.webView reload];
 }
 
 - (IBAction)localFile:(id)sender {
-    NSLog(@"🍭load local file");
     NSURL *bundleURL = [[[NSBundle mainBundle]resourceURL] absoluteURL];
     NSURL *fileURL = [bundleURL URLByAppendingPathComponent:@"local.html"];
     [self.webView loadFileURL:fileURL allowingReadAccessToURL:bundleURL];
@@ -62,7 +59,7 @@ NSString static *RequestURL = @"https://www.apple.com/";
     self.webView.navigationDelegate = self.customNavDel;
     self.webView.UIDelegate = self.customUIDel;
     if([self.webView.navigationDelegate respondsToSelector:@selector(webView:didFinishNavigation:)]) {
-        NSLog(@"🍭navigationDelegate setup");
+        [YDPrettyPrint single:@"navigationDelegate setup"];
     }
     
     self.view = self.webView;

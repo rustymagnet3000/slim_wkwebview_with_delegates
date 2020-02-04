@@ -6,7 +6,7 @@
 
     <script>
         console.log('J/S script from local.html')
-        
+        var spiders = ["Shelob", "Wandering", "Wheel"];
         function hideText() {
             console.log('YDMessage: hideText() called and hiding text')
             document.getElementById("demo").style.display = "none";
@@ -17,7 +17,7 @@
             document.getElementById("demo").style.display = "block";
         }
         function triggerHandler() {
-            window.webkit.messageHandlers.jsHandler.postMessage("secretViewController","written in html file");
+            window.webkit.messageHandlers.jsHandler.postMessage(spiders);
     }
     </script>
 </head>
