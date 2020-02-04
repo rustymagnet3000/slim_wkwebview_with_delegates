@@ -13,8 +13,9 @@
 		0F81734423D5F4F800D97D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F81734323D5F4F800D97D05 /* Assets.xcassets */; };
 		0F81734723D5F4F800D97D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F81734523D5F4F800D97D05 /* LaunchScreen.storyboard */; };
 		0F81734A23D5F4F800D97D05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F81734923D5F4F800D97D05 /* main.m */; };
-		0FCC4B3A23D8461D0002AD84 /* YDNavDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCC4B3923D8461D0002AD84 /* YDNavDel.m */; };
-		0FF6290B23E44E7C009D864B /* YDUIDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6290A23E44E7C009D864B /* YDUIDel.m */; };
+		0FAAD1E723E9584300296A33 /* YDjsBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAAD1E623E9584300296A33 /* YDjsBridge.m */; };
+		0FCC4B3A23D8461D0002AD84 /* YDNavDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCC4B3923D8461D0002AD84 /* YDNavDelegate.m */; };
+		0FF6290B23E44E7C009D864B /* YDUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6290A23E44E7C009D864B /* YDUIDelegate.m */; };
 		0FF6290D23E477A8009D864B /* local.html in Resources */ = {isa = PBXBuildFile; fileRef = 0FF6290C23E477A8009D864B /* local.html */; };
 /* End PBXBuildFile section */
 
@@ -29,11 +30,13 @@
 		0F81734623D5F4F800D97D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F81734823D5F4F800D97D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F81734923D5F4F800D97D05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0FCC4B3823D8461D0002AD84 /* YDNavDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDNavDel.h; sourceTree = "<group>"; };
-		0FCC4B3923D8461D0002AD84 /* YDNavDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDNavDel.m; sourceTree = "<group>"; };
+		0FAAD1E523E9584300296A33 /* YDjsBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDjsBridge.h; sourceTree = "<group>"; };
+		0FAAD1E623E9584300296A33 /* YDjsBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDjsBridge.m; sourceTree = "<group>"; };
+		0FCC4B3823D8461D0002AD84 /* YDNavDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDNavDelegate.h; sourceTree = "<group>"; };
+		0FCC4B3923D8461D0002AD84 /* YDNavDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDNavDelegate.m; sourceTree = "<group>"; };
 		0FCC4B3B23D8B55D0002AD84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		0FF6290923E44E7C009D864B /* YDUIDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDUIDel.h; sourceTree = "<group>"; };
-		0FF6290A23E44E7C009D864B /* YDUIDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDUIDel.m; sourceTree = "<group>"; };
+		0FF6290923E44E7C009D864B /* YDUIDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDUIDelegate.h; sourceTree = "<group>"; };
+		0FF6290A23E44E7C009D864B /* YDUIDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDUIDelegate.m; sourceTree = "<group>"; };
 		0FF6290C23E477A8009D864B /* local.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = local.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,10 +75,12 @@
 				0F81733823D5F4F700D97D05 /* AppDelegate.m */,
 				0F81733D23D5F4F700D97D05 /* ViewController.h */,
 				0F81733E23D5F4F700D97D05 /* ViewController.m */,
-				0FCC4B3823D8461D0002AD84 /* YDNavDel.h */,
-				0FCC4B3923D8461D0002AD84 /* YDNavDel.m */,
-				0FF6290923E44E7C009D864B /* YDUIDel.h */,
-				0FF6290A23E44E7C009D864B /* YDUIDel.m */,
+				0FCC4B3823D8461D0002AD84 /* YDNavDelegate.h */,
+				0FCC4B3923D8461D0002AD84 /* YDNavDelegate.m */,
+				0FF6290923E44E7C009D864B /* YDUIDelegate.h */,
+				0FF6290A23E44E7C009D864B /* YDUIDelegate.m */,
+				0FAAD1E523E9584300296A33 /* YDjsBridge.h */,
+				0FAAD1E623E9584300296A33 /* YDjsBridge.m */,
 				0FF6290C23E477A8009D864B /* local.html */,
 				0F81734023D5F4F700D97D05 /* Main.storyboard */,
 				0F81734323D5F4F800D97D05 /* Assets.xcassets */,
@@ -160,8 +165,9 @@
 				0F81733F23D5F4F700D97D05 /* ViewController.m in Sources */,
 				0F81733923D5F4F700D97D05 /* AppDelegate.m in Sources */,
 				0F81734A23D5F4F800D97D05 /* main.m in Sources */,
-				0FF6290B23E44E7C009D864B /* YDUIDel.m in Sources */,
-				0FCC4B3A23D8461D0002AD84 /* YDNavDel.m in Sources */,
+				0FF6290B23E44E7C009D864B /* YDUIDelegate.m in Sources */,
+				0FCC4B3A23D8461D0002AD84 /* YDNavDelegate.m in Sources */,
+				0FAAD1E723E9584300296A33 /* YDjsBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
